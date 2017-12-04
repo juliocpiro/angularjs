@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="ToDoList">
+<head>
+	<meta charset="utf-8">
+	<title>Hola Controller</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>	
+	<script src="angular-local-storage.min.js"></script>
+	<script src="controller.js"></script>
+</head>
+<body ng-controller="ToDoController">
+	<ul>
+		<li ng-repeat="actividad in todo">
+			{{actividad.descripcion}} - {{actividad.fecha}} - <a href="#" ng-click="removeItem(actividad)">X</a>
+		</li>
+	</ul>
+	<form ng-submit="addActv()">
+		<input type="text" ng-model="newActv.descripcion">
+		<input type="text" ng-model="newActv.fecha">
+		<input type="submit" value="Guardar">
+	</form>
+	<button ng-click="clean()">Limpiar</button>
+</body>
+</html>
