@@ -4,10 +4,10 @@
 	$dbpassword="";
 	$database="escuela";
 
-	$page = $_GET['page']; // get the requested page 
-	$limit = $_GET['rows']; // get how many rows we want to have into the grid 
-	$sidx = $_GET['sidx']; // get index row - i.e. user click to sort 
-	$sord = $_GET['sord']; // get the direction 
+	$page = $_REQUEST['page']; // get the requested page 
+	$limit = $_REQUEST['rows']; // get how many rows we want to have into the grid 
+	$sidx = $_REQUEST['sidx']; // get index row - i.e. user click to sort 
+	$sord = $_REQUEST['sord']; // get the direction 
 	if(!$sidx) $sidx =1; 
 	// connect to the database 
 	$db = mysql_connect($dbhost, $dbuser, $dbpassword) 

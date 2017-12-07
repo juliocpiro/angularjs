@@ -5,7 +5,7 @@
 	<title>Hola Controller</title>
 	<script src="jqGrid/js/jquery-1.4.2.min.js"></script>
 	<script src="jqGrid/js/i18n/grid.locale-es.js"></script>
-	<script src="jqGrid/js/jquery.jqGrid.min.js"></script>
+	<script src="jqGrid/js/jquery.jqGrid.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" media="screen" href="https://code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css" />
@@ -14,9 +14,13 @@
 	<script src="controller.js"></script>
 </head>
 <body ng-controller="gridController">
-	<h1>{{titulo}}</h1>
-	<div ng-jqgrid="idGrid" pagerid="idGridPager" config="config" data="data"></div>
-
+	{{titulo}}
+	<div ng-jqgrid="idGrid" gridid="grid" pagerid="idGridPager" config="config" data="data" api="api"></div>
+	
+	<div>Nombre<input type="text" ng-model="nombre">{{nombre}}</div>
+	<div>Apellido<input type="text" ng-model="apellido">{{apellido}}</div>
+	<div><button id="btnEnviar" ng-click="buscarGrid();">Enviar</button></div>
+	
 	<table id="jqGrid"></table>
     <div id="jqGridPager"></div>
 
